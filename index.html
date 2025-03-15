@@ -5,392 +5,394 @@
     <meta name="viewport" content="1024">
     <title>AROGYAVARDHANI EDIBLES PVT.LTD - Organic & Natural Products</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
-
-        /* Navigation Bar */
-        nav {
-            background-color: #8B5A2B;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #5e3b2d;
-        }
-
-        /* Header Section */
         header {
-            background-color: #8B5A2B;
+            background-color: #4caf50; /* Green */
             color: white;
-            padding: 50px 20px;
+            padding: 30px;
+            font-size: 36px;
+            font-weight: 700;
             text-align: center;
-            font-size: 3em;
         }
-
-        /* Banner Section */
-        .banner img {
+        .poster img {
             width: 100%;
-            max-height: 400px;
+            max-height: 500px;
             object-fit: cover;
-            margin-top: 20px;
         }
-
-        /* Product Section */
-        .product-section {
-            background-color: white;
-            margin: 20px;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        .content {
+            padding: 40px 20px;
         }
-
-        .product-section h2 {
+        .section {
+            background: white;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1200px;
+        }
+        h2 {
+            color: #2e8b57; /* Dark Green */
             text-align: center;
-            color: #8B5A2B;
+            font-size: 28px;
+            margin-bottom: 25px;
         }
-
-        .product {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
         }
-
-        .product img {
-            max-width: 150px;
+        .product-item {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-        }
-
-        .product-info {
-            flex: 1;
-            margin-left: 20px;
-        }
-
-        .product-info h3 {
-            color: #8B5A2B;
-            margin-bottom: 10px;
-        }
-
-        .product-info p {
-            font-size: 1.1em;
+            object-fit: cover;
             margin-bottom: 15px;
         }
-
+        .product-item h3 {
+            color: #4caf50; /* Green */
+            font-size: 20px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        .product-item p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
         .btn {
-            background-color: #4CAF50;
+            background-color: #3498db; /* Blue */
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
         }
-
-        .btn:disabled {
-            background-color: #d3d3d3;
-            cursor: not-allowed;
+        .btn:hover {
+            background-color: #2980b9; /* Darker Blue */
         }
-
-        .out-of-stock {
-            color: #FF0000;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        /* Order Form */
-        .order-form {
-            display: none;
-            background-color: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .order-form input, .order-form textarea, .order-form select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .order-form button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Footer Section */
         footer {
-            background-color: #8B5A2B;
+            background-color: #4caf50; /* Green */
             color: white;
-            padding: 20px;
+            padding: 15px 0;
             text-align: center;
+            font-size: 14px;
         }
-
-        .content {
-            padding: 20px;
+        /* Form Styles */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
-        .section {
-            margin-bottom: 40px;
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
         }
-
-        h2 {
-            color: #8B5A2B;
+        form button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
         }
-
-        /* Responsive adjustments */
+        form button:hover {
+            background-color: #388e3c;
+        }
+        .product {
+            margin-bottom: 15px;
+        }
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .product {
-                flex-direction: column;
-                align-items: flex-start;
+            header {
+                font-size: 28px;
             }
-
-            .product img {
-                max-width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .product-info {
-                margin-left: 0;
+            h2 {
+                font-size: 24px;
             }
         }
     </style>
-</head>
-
 <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#products">Our Products</a>
-        <a href="#reviews">Customer Reviews</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
-
-    <!-- Header Section -->
     <header>
         AROGYAVARDHANI EDIBLES PVT.LTD - Organic & Natural Products
     </header>
-
-    <div class="content">
-        <!-- About Us Section -->
-        <div class="section" id="about">
-            <h2>About Us</h2>
-            <p>We provide 100% natural millets and bull-driven oils to ensure health and sustainability.</p>
+    <!-- Poster Section -->
+        <div class="poster">
+            <img src="poster.png" alt="Poster Image">
+        </div>
+       <div class="content">
+        <!-- New Content Section Before Banner -->
+        <div class="section bilingual">
+            <div class="english">
+                <h2>Our Commitment to Sustainability</h2>
+                <p>At Arogyavardhani Edibles, we focus on sustainability by using eco-friendly practices in our farming and production. We are committed to offering products that are good for you and the planet.</p>
+            </div>
+            <div class="hindi">
+                <h2>हमारी स्थिरता के प्रति प्रतिबद्धता</h2>
+                <p>अरोयोगवर्धनी एडीबल्स में, हम अपनी खेती और उत्पादन में पारिस्थितिकी अनुकूल प्रथाओं का उपयोग करके स्थिरता पर ध्यान केंद्रित करते हैं। हम उत्पादों की पेशकश करने के लिए प्रतिबद्ध हैं जो आपके लिए और ग्रह के लिए अच्छे हैं।</p>
+            </div>
         </div>
 
-        <!-- Product Section -->
-        <div class="product-section" id="products">
+        <!-- About Us Section -->
+        <div class="section bilingual">
+            <div class="english">
+                <h2>About Us</h2>
+                <p>We provide 100% natural millets and bull-driven oils to ensure health and sustainability.</p>
+            </div>
+            <div class="hindi">
+                <h2>हमारे बारे में</h2>
+                <p>हम 100% प्राकृतिक बाजरे और बैल द्वारा चलित तेल प्रदान करते हैं जो स्वास्थ्य और स्थिरता सुनिश्चित करते हैं।</p>
+            </div>
+        </div>
+
+        <!-- Why Millet Section -->
+        <div class="section bilingual">
+            <div class="english">
+                <h2>Why You Must Include Millet in Your Regular Diet</h2>
+                <p>Eating millet daily will provide you with several health benefits. It helps women to fight off heart ailments post-menopause, controls high blood pressure, and reduces cholesterol. Millet also benefits those suffering from gallstones, thanks to its fiber content.</p>
+            </div>
+            <div class="hindi">
+                <h2>आपको अपनी नियमित आहार में बाजरा क्यों शामिल करना चाहिए</h2>
+                <p>दैनिक रूप से बाजरा खाने से आपको कई स्वास्थ्य लाभ होंगे। यह महिलाओं को मीनोपॉज के बाद हृदय रोगों से लड़ने में मदद करता है, उच्च रक्तचाप को नियंत्रित करता है, और कोलेस्ट्रॉल को कम करता है। बाजरा पित्ताशय की पथरी से पीड़ित लोगों के लिए भी लाभकारी है, इसके फाइबर सामग्री के कारण।</p>
+            </div>
+        </div>
+
+        <!-- Bull-Driven Oil Section -->
+        <div class="section bilingual">
+            <div class="english">
+                <h2>Why Use Bull-Driven Edible Oil?</h2>
+                <p>&#9830; Slow Processed: Extracted at 2-3 RPM, while machine-made oils are extracted at 30-80 RPM.</p>
+                <p>&#9830; Cold-Pressed: Extracted at near room temperature, preserving the nutrient value.</p>
+                <p>&#9830; Traditional Methods: Our oils are made using a bull-driven process that dates back to 1500 BC.</p>
+                <p>&#9830; This process ensures that our oils are the purest and most nutrition-rich.</p>
+            </div>
+            <div class="hindi">
+                <h2>बैल-चालित खाद्य तेल क्यों उपयोग करें?</h2>
+                <p>&#9830; धीमी प्रक्रिया: 2-3 RPM पर निकाला जाता है, जबकि मशीन द्वारा बने तेल 30-80 RPM पर निकाले जाते हैं।</p>
+                <p>&#9830; ठंडा-प्रेस किया हुआ: कमरे के तापमान के पास निकाला जाता है, जिससे पोषक तत्वों का संरक्षण होता है।</p>
+                <p>&#9830; पारंपरिक तरीके: हमारे तेल बैल द्वारा चलाए गए एक प्रक्रिया से बनाए जाते हैं जो 1500 ईसा पूर्व से शुरू होते हैं।</p>
+                <p>&#9830; यह प्रक्रिया सुनिश्चित करती है कि हमारे तेल सबसे शुद्ध और पोषक तत्वों से भरपूर हों।</p>
+            </div>
+        </div>
+
+ <div class="content">
+        <!-- Our Products Section -->
+        <div class="section">
             <h2>Our Products</h2>
-            
-            <!-- Product Listings -->
-            <div class="product" id="product-1">
-                <img src="mustard-oil.jpg" alt="Mustard Oil">
-                <div class="product-info">
-                    <h3>Mustard Oil</h3>
-                    <p>Rich in omega-3 fatty acids, good for cooking and hair care</p>
-                    <p><strong>₹520</strong></p>
-                    <button class="btn" id="order-button-1" onclick="showOrderForm(1)">Order Now</button>
-                    <div class="out-of-stock" id="stock-status-1"></div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-item">
+                    <img src="sesame-oil.jpg" alt="Cold-Pressed Bull-Driven Sesame Oil">
+                    <h3>Cold-Pressed Bull-Driven Sesame Oil (1L)</h3>
+                    <p>Rich in antioxidants, supports heart health.</p>
+                    <div class="price">₹700-₹750</div>
+                    <a href="#" class="btn">Buy Now</a>
                 </div>
 
-                <!-- Order Form for Mustard Oil -->
-                <div class="order-form" id="order-form-1">
-                    <h3>Order Details - Mustard Oil</h3>
-                    <form id="order-form-submit-1">
-                        <input type="text" placeholder="Your Name" id="name-1" required><br>
-                        <input type="tel" placeholder="Mobile Number" id="mobile-1" required><br>
-                        <input type="text" placeholder="Address" id="address-1" required><br>
-                        <input type="email" placeholder="Email" id="email-1" required><br>
-                        <select id="quantity-1">
-                            <option value="1">1L</option>
-                            <option value="2">2L</option>
-                        </select><br>
-                        <textarea placeholder="Extra Message" id="message-1"></textarea><br>
-                        <button type="submit">Submit Order</button>
-                    </form>
+                <!-- Product 2 -->
+                <div class="product-item">
+                    <img src="mustard-oil.jpg" alt="Cold-Pressed Bull-Driven Mustard Oil">
+                    <h3>Cold-Pressed Bull-Driven Mustard Oil (1L)</h3>
+                    <p>Best in small quantities, promotes hair growth.</p>
+                    <div class="price">₹500-₹550</div>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item">
+                    <img src="coconut-oil.jpg" alt="Cold-Pressed Bull-Driven Coconut Oil">
+                    <h3>Cold-Pressed Bull-Driven Coconut Oil (1L)</h3>
+                    <p>Boosts immunity, improves digestion.</p>
+                    <div class="price">₹500-₹550</div>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-item">
+                    <img src="peanut-oil.jpg" alt="Cold-Pressed Bull-Driven Peanut Oil">
+                    <h3>Cold-Pressed Bull-Driven Peanut Oil (1L)</h3>
+                    <p>Highly nutritious, best for cooking.</p>
+                    <div class="price">₹500-₹550</div>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-item">
+                    <img src="bajra-millet.jpg" alt="Organic Bajra Millet">
+                    <h3>Organic Bajra Millet (1kg)</h3>
+                    <p>Rich in fiber, improves digestion.</p>
+                    <div class="price">₹120-₹150</div>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-item">
+                    <img src="jowar-millet.jpg" alt="Organic Jowar Millet">
+                    <h3>Organic Jowar Millet (1kg)</h3>
+                    <p>Rich in fiber, improves digestion.</p>
+                    <div class="price">₹120-₹150</div>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-item">
+                    <img src="gondali-millet.jpg" alt="Organic Gondali Millet">
+                    <h3>Organic Gondali Millet (1kg)</h3>
+                    <p>Gluten-free, good for diabetes.</p>
+                    <div class="price">₹120-₹150</div>
+                    <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
+        </div>
+    </div>
+  <!-- Place Your Order Section -->
+        <div class="section">
+            <h2>Place Your Order</h2>
 
-            <div class="product" id="product-2">
-                <img src="coconut-oil.jpg" alt="Coconut Oil">
-                <div class="product-info">
-                    <h3>Coconut Oil</h3>
-                    <p>Cold-pressed for pure, healthy oil, ideal for cooking</p>
-                    <p><strong>₹750</strong></p>
-                    <button class="btn" id="order-button-2" onclick="showOrderForm(2)">Order Now</button>
-                    <div class="out-of-stock" id="stock-status-2"></div>
+            <!-- New Form Connected to Netlify -->
+            <form name="order" method="POST" data-netlify="true" onsubmit="showThankYouMessage(event)">
+                <input type="hidden" name="form-name" value="order">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <h3>Select Products:</h3>
+
+                <!-- Product Options -->
+                <div class="product">
+                    <label>
+                        <input type="checkbox" name="product" value="Sesame Oil (₹750)"> Sesame Oil (₹750)
+                    </label>
+                    Quantity: <input type="number" name="sesame_quantity" min="1" value="1">
                 </div>
 
-                <!-- Order Form for Coconut Oil -->
-                <div class="order-form" id="order-form-2">
-                    <h3>Order Details - Coconut Oil</h3>
-                    <form id="order-form-submit-2">
-                        <input type="text" placeholder="Your Name" id="name-2" required><br>
-                        <input type="tel" placeholder="Mobile Number" id="mobile-2" required><br>
-                        <input type="text" placeholder="Address" id="address-2" required><br>
-                        <input type="email" placeholder="Email" id="email-2" required><br>
-                        <select id="quantity-2">
-                            <option value="1">1L</option>
-                            <option value="2">2L</option>
-                        </select><br>
-                        <textarea placeholder="Extra Message" id="message-2"></textarea><br>
-                        <button type="submit">Submit Order</button>
-                    </form>
+                <div class="product">
+                    <label>
+                        <input type="checkbox" name="product" value="Mustard Oil (₹500)"> Mustard Oil (₹500)
+                    </label>
+                    Quantity: <input type="number" name="mustard_quantity" min="1" value="1">
                 </div>
+
+                <div class="product">
+                    <label>
+                        <input type="checkbox" name="product" value="Coconut Oil (₹525)"> Coconut Oil (₹525)
+                    </label>
+                    Quantity: <input type="number" name="coconut_quantity" min="1" value="1">
+                </div>
+
+                <div class="product">
+                    <label>
+                        <input type="checkbox" name="product" value="Peanut Oil (₹500)"> Peanut Oil (₹500)
+                    </label>
+                    Quantity: <input type="number" name="peanut_quantity" min="1" value="1">
+                </div>
+
+                <div class="product">
+                    <label>
+                        <input type="checkbox" name="product" value="Bajra Millets (₹130)"> Bajra Millets (₹130)
+                    </label>
+                    Quantity: <input type="number" name="bajra_quantity" min="1" value="1">
+                </div>
+
+                <div class="product">
+                    <label>
+                        <input type="checkbox" name="product" value="Jowar Millets (₹130)"> Jowar Millets (₹130)
+                    </label>
+                    Quantity: <input type="number" name="jowar_quantity" min="1" value="1">
+                </div>
+
+                <div class="product">
+                    <label>
+                        <input type="checkbox" name="product" value="Gondali Millets (₹130)"> Gondali Millets (₹130)
+                    </label>
+                    Quantity: <input type="number" name="gondali_quantity" min="1" value="1">
+                </div>
+
+                <button type="submit">Place Order</button>
+            </form>
+
+            <div id="thank-you-message" style="display: none;">
+                <p>✅ Thank you for your order! We will contact you soon.</p>
             </div>
-
-            <div class="product" id="product-3">
-                <img src="black-mustard.jpg" alt="Black Mustard">
-                <div class="product-info">
-                    <h3>Black Mustard</h3>
-                    <p>Rich in minerals and great for health</p>
-                    <p><strong>₹525</strong></p>
-                    <button class="btn" id="order-button-3" onclick="showOrderForm(3)">Order Now</button>
-                    <div class="out-of-stock" id="stock-status-3"></div>
-                </div>
-
-                <!-- Order Form for Black Mustard -->
-                <div class="order-form" id="order-form-3">
-                    <h3>Order Details - Black Mustard</h3>
-                    <form id="order-form-submit-3">
-                        <input type="text" placeholder="Your Name" id="name-3" required><br>
-                        <input type="tel" placeholder="Mobile Number" id="mobile-3" required><br>
-                        <input type="text" placeholder="Address" id="address-3" required><br>
-                        <input type="email" placeholder="Email" id="email-3" required><br>
-                        <select id="quantity-3">
-                            <option value="1">1kg</option>
-                            <option value="2">2kg</option>
-                        </select><br>
-                        <textarea placeholder="Extra Message" id="message-3"></textarea><br>
-                        <button type="submit">Submit Order</button>
-                    </form>
-                </div>
+        </div>
+    </div>
+        <!-- Why Choose Our Products Section -->
+        <div class="section bilingual">
+            <div class="english">
+                <h2>Why Choose Our Products?</h2>
+                <p>✅ 100% Natural & Chemical-Free</p>
+                <p>✅ Bull-Driven Traditional Oil Extraction</p>
+                <p>✅ Handpicked & Organic Millets</p>
+                <p>✅ Supports Sustainable Farming</p>
+                <p>✅ Metallic packaging for nutrients</p>
             </div>
-
-            <div class="product" id="product-4">
-                <img src="black-sesame.jpg" alt="Black Sesame">
-                <div class="product-info">
-                    <h3>Black Sesame</h3>
-                    <p>High in calcium and beneficial for bones</p>
-                    <p><strong>₹750</strong></p>
-                    <button class="btn" id="order-button-4" onclick="showOrderForm(4)">Order Now</button>
-                    <div class="out-of-stock" id="stock-status-4"></div>
-                </div>
-
-                <!-- Order Form for Black Sesame -->
-                <div class="order-form" id="order-form-4">
-                    <h3>Order Details - Black Sesame</h3>
-                    <form id="order-form-submit-4">
-                        <input type="text" placeholder="Your Name" id="name-4" required><br>
-                        <input type="tel" placeholder="Mobile Number" id="mobile-4" required><br>
-                        <input type="text" placeholder="Address" id="address-4" required><br>
-                        <input type="email" placeholder="Email" id="email-4" required><br>
-                        <select id="quantity-4">
-                            <option value="1">500g</option>
-                            <option value="2">1kg</option>
-                        </select><br>
-                        <textarea placeholder="Extra Message" id="message-4"></textarea><br>
-                        <button type="submit">Submit Order</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="product" id="product-5">
-                <img src="peanut-oil.jpg" alt="Peanut Oil">
-                <div class="product-info">
-                    <h3>Peanut Oil</h3>
-                    <p>Ideal for high-temperature cooking</p>
-                    <p><strong>₹525</strong></p>
-                    <button class="btn" id="order-button-5" onclick="showOrderForm(5)">Order Now</button>
-                    <div class="out-of-stock" id="stock-status-5"></div>
-                </div>
-
-                <!-- Order Form for Peanut Oil -->
-                <div class="order-form" id="order-form-5">
-                    <h3>Order Details - Peanut Oil</h3>
-                    <form id="order-form-submit-5">
-                        <input type="text" placeholder="Your Name" id="name-5" required><br>
-                        <input type="tel" placeholder="Mobile Number" id="mobile-5" required><br>
-                        <input type="text" placeholder="Address" id="address-5" required><br>
-                        <input type="email" placeholder="Email" id="email-5" required><br>
-                        <select id="quantity-5">
-                            <option value="1">1L</option>
-                            <option value="2">2L</option>
-                        </select><br>
-                        <textarea placeholder="Extra Message" id="message-5"></textarea><br>
-                        <button type="submit">Submit Order</button>
-                    </form>
-                </div>
+            <div class="hindi">
+                <h2>हमारे उत्पाद क्यों चुनें?</h2>
+                <p>✅ 100% प्राकृतिक और रासायनिक-मुक्त</p>
+                <p>✅ बैल-चालित पारंपरिक तेल निष्कर्षण</p>
+                <p>✅ हाथ से चुनिंदा और जैविक बाजरे</p>
+                <p>✅ सतत कृषि का समर्थन करता है</p>
+                <p>✅ पोषक तत्वों के लिए धातु पैकेजिंग</p>
             </div>
         </div>
 
         <!-- Contact Us Section -->
-        <div class="section" id="contact">
+        <div class="section">
             <h2>Contact Us</h2>
             <p>📞 Phone: +91 9931136851, +91 9955910502, +91 8789310925</p>
             <p>📧 Email: arogyavardhani3@gmail.com</p>
             <p>📍 Location: Shanti Kunj, Baswariya, Koderma, Jharkhand</p>
-        </div>
-    </div>
+        
 
-    <!-- Footer Section -->
+
+
     <footer>
         © 2025 Arogyavardhani | All Rights Reserved
     </footer>
-
-    <script>
-        // Sample Product Data
-        const products = [
-            { id: 1, name: "Mustard Oil", inStock: true },
-            { id: 2, name: "Coconut Oil", inStock: true },
-            { id: 3, name: "Black Mustard", inStock: true },
-            { id: 4, name: "Black Sesame", inStock: true },
-            { id: 5, name: "Peanut Oil", inStock: true },
-        ];
-
-        // Function to handle showing order form
-        function showOrderForm(productId) {
-            // Hide all order forms
-            document.querySelectorAll('.order-form').forEach(form => form.style.display = 'none');
-            // Show the selected product's order form
-            document.getElementById('order-form-' + productId).style.display = 'block';
-        }
-
-        // Handle form submission and show Thank You message
-        document.querySelectorAll('.order-form form').forEach(form => {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const productId = form.id.split('-')[2];
-                alert(`Thank you for your order! You ordered ${products[productId - 1].name}.`);
-                document.getElementById('order-form-' + productId).style.display = 'none';
-            });
-        });
-    </script>
-
 </body>
 </html>
